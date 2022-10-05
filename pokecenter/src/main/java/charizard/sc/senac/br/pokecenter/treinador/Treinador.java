@@ -15,7 +15,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder(toBuilder = true)
+@Builder
 @Entity(name = "treinador")
 public class Treinador {
     @Id
@@ -35,6 +35,6 @@ public class Treinador {
     @Enumerated(EnumType.STRING)
     private Genero genero;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "treinador", orphanRemoval = true)
-    List<Paciente> pacienteList = new ArrayList<>();
+    /*@OneToMany(fetch = FetchType.LAZY, mappedBy = "treinador", orphanRemoval = true)
+    List<Paciente> pacienteList = new ArrayList<>();*/
 }

@@ -25,6 +25,12 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    private Treinador treinador;
+
+    @ManyToOne
+    private Pokemon pokemon;
+
     @Column(name="nome")
     @NotNull(message="O nome não pode ser nulo")
     @NotEmpty(message="O nome não pode ser vazio")
@@ -43,11 +49,5 @@ public class Paciente {
     @Column(name = "genero")
     @Enumerated(EnumType.STRING)
     private Genero genero;
-
-    @ManyToOne
-    private Treinador treinador;
-
-    @ManyToOne
-    private Pokemon pokemon;
 
 }
