@@ -38,7 +38,8 @@ public class Pokemon {
     @Enumerated(EnumType.STRING)
     private TipoPokemon tipoPokemon;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pokemon", orphanRemoval = true)
-    List<Paciente> pacienteList = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pokemon", orphanRemoval = true)
+//    @JoinTable(name="i")
+//    List<Paciente> pacienteList = new ArrayList<>();
 
 }

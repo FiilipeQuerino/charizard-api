@@ -49,8 +49,11 @@ public class TreinadorController {
         return ResponseEntity.ok(listaFinal);
     }
     @PutMapping("/{idTreinador}")
-    public ResponseEntity<TreinadorRepresentation.Detalhes> atualizarTreinador(@PathVariable Long idTreinador, @RequestBody TreinadorRepresentation.CriarOuAtualizar atualizar) {
-        Treinador treinadorAtualizado = this.treinadorService.atualizar(idTreinador, atualizar);
+    public ResponseEntity<TreinadorRepresentation.Detalhes> atualizarTreinador(
+            @PathVariable Long idTreinador,
+            @RequestBody TreinadorRepresentation.CriarOuAtualizar atualizar) {
+        Treinador treinadorAtualizado =
+                this.treinadorService.atualizar(idTreinador, atualizar);
         TreinadorRepresentation.Detalhes detalhes = TreinadorRepresentation.Detalhes.from(treinadorAtualizado);
 
         return ResponseEntity.ok(detalhes);

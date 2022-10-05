@@ -17,76 +17,52 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public interface PacienteRepresentation {
-    @Data
     @Builder
-    @AllArgsConstructor
-    @NoArgsConstructor
-    class CriarOuAtualizar {
-
-        @NotNull(message = "O campo Nome não pode ser nulo")
-        @NotEmpty(message = "O campo Nome não pode ser vazio")
-        private String nome;
-        private TipoSanguineo tipoSanguineo;
-        private Date dataNascimento;
-        private String alergia;
-        private Genero genero;
-        private Treinador treinador;
-        private Pokemon pokemon;
-
-    }
     @Data
-    @Builder
-    class Detalhes {
+    class Padrao {
         private Long id;
+        //        @NotNull(message = "O campo Nome não pode ser nulo")
+//        @NotEmpty(message = "O campo Nome não pode ser vazio")
         private String nome;
         private TipoSanguineo tipoSanguineo;
         private Date dataNascimento;
         private String alergia;
         private Genero genero;
-        private Treinador treinador;
-        private Pokemon pokemon;
-        public static Detalhes from(Paciente paciente) {
-            return Detalhes.builder()
+        //private Treinador treinador;
+
+
+        public static Padrao from(Paciente paciente) {
+            return Padrao.builder()
                     .id(paciente.getId())
                     .nome(paciente.getNome())
                     .tipoSanguineo(paciente.getTipoSanguineo())
                     .dataNascimento(paciente.getDataNascimento())
                     .alergia(paciente.getAlergia())
                     .genero(paciente.getGenero())
-                    .treinador(paciente.getTreinador())
-                    .pokemon(paciente.getPokemon())
                     .build();
         }
+
+        public static List<Padrao> from(List<Paciente> pacienteList) {
+            return pacienteList.stream()
+                    .map(Padrao::from)
+                    .collect(Collectors.toList());
+        }
+
     }
-    @Data
+
     @Builder
-    class Lista {
-        private Long id;
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    class CriarOuAtualizar {
+
+        //        @NotNull(message = "O campo Nome não pode ser nulo")
+//        @NotEmpty(message = "O campo Nome não pode ser vazio")
         private String nome;
         private TipoSanguineo tipoSanguineo;
         private Date dataNascimento;
         private String alergia;
         private Genero genero;
-        private Treinador treinador;
-        private Pokemon pokemon;
-        private static Lista from (Paciente paciente){
-            return Lista.builder()
-                    .id(paciente.getId())
-                    .nome(String.format("%s", paciente.getNome()))
-                    .tipoSanguineo(paciente.getTipoSanguineo())
-                    .dataNascimento(paciente.getDataNascimento())
-                    .alergia(paciente.getAlergia())
-                    .genero(paciente.getGenero())
-                    .treinador(paciente.getTreinador())
-                    .pokemon(paciente.getPokemon())
-                    .build();
-        }
 
-        public static List<Lista> from(List<Paciente> pacienteList) {
-            return pacienteList
-                    .stream()
-                    .map(Lista::from)
-                    .collect(Collectors.toList());
-        }
     }
 }
