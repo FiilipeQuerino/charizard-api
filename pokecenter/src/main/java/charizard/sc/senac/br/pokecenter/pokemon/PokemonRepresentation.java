@@ -21,6 +21,7 @@ public interface PokemonRepresentation {
         @NotNull(message = "O campo Nome não pode ser nulo")
         @NotEmpty(message = "O campo Nome não pode ser vazio")
         private String nome;
+        @NotNull(message = "O campo Tipo Pokemon não pode ser nulo")
         private TipoPokemon tipoPokemon;
     }
     @Data

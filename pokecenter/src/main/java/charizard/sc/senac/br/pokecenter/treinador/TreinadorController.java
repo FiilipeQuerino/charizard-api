@@ -41,11 +41,11 @@ public class TreinadorController {
 
         Pageable pageable = PageRequest.of(paginaSelecionada, tamanhoPagina); //Pesquisar o que/como usar o sort
 
-        Page<Treinador> professorList = Objects.isNull(filtroURI)?
+        Page<Treinador> treinadorList = Objects.isNull(filtroURI)?
                 this.treinadorService.buscarTodos(pageable):
                 this.treinadorService.buscarTodos(filtroURI, pageable);
 
-        List<TreinadorRepresentation.Lista> listaFinal = TreinadorRepresentation.Lista.from(professorList.getContent());
+        List<TreinadorRepresentation.Lista> listaFinal = TreinadorRepresentation.Lista.from(treinadorList.getContent());
         return ResponseEntity.ok(listaFinal);
     }
     @PutMapping("/{idTreinador}")

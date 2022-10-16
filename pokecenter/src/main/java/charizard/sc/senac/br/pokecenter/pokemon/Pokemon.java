@@ -30,8 +30,6 @@ public class Pokemon {
     private Paciente paciente;
 
     @Column(name="nome")
-    @NotNull(message="O nome não pode ser nulo")
-    @NotEmpty(message="O nome não pode ser vazio")
     private String nome;
 
     @Column(name = "tipo_pokemon")
