@@ -2,9 +2,8 @@ package charizard.sc.senac.br.pokecenter.paciente;
 
 
 
-import charizard.sc.senac.br.pokecenter.pokemon.PokemonService;
-import charizard.sc.senac.br.pokecenter.treinador.Treinador;
-import charizard.sc.senac.br.pokecenter.treinador.TreinadorRepresentation;
+
+
 import charizard.sc.senac.br.pokecenter.treinador.TreinadorService;
 import com.querydsl.core.types.Predicate;
 import lombok.AllArgsConstructor;
@@ -21,24 +20,21 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("api/treinador/{idTreinador}/pokemon/{idPokemon}/paciente")
+@RequestMapping("api/treinador/{idTreinador}/paciente")
 @CrossOrigin("*")
 @AllArgsConstructor
 public class PacienteController {
     private TreinadorService treinadorService;
     private PacienteService pacienteService;
 
-    private PokemonService pokemonService;
-
     @PostMapping("/")
     public ResponseEntity<PacienteRepresentation.Padrao> cadastrarPaciente(
             @PathVariable Long idTreinador,
-            @PathVariable Long idPokemon,
             @Valid @RequestBody PacienteRepresentation.CriarOuAtualizar criar) {
 
         Paciente paciente =
                 this.pacienteService.criarPaciente(treinadorService,
-                        idTreinador, pokemonService, idPokemon, criar);
+                        idTreinador, criar);
         return ResponseEntity.status(HttpStatus.SC_CREATED)
                 .body(PacienteRepresentation.Padrao.from(paciente));
     }
@@ -85,7 +81,5 @@ public class PacienteController {
 
         return ResponseEntity
                 .ok(detalhes);
-
-
     }
 }
