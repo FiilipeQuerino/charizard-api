@@ -23,11 +23,7 @@ import java.util.List;
 public class Pokemon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="i_pokemon")
     private Long id;
-
-    @ManyToOne
-    private Paciente paciente;
 
     @Column(name="nome")
     private String nome;
@@ -35,9 +31,5 @@ public class Pokemon {
     @Column(name = "tipo_pokemon")
     @Enumerated(EnumType.STRING)
     private TipoPokemon tipoPokemon;
-
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pokemon", orphanRemoval = true)
-//    @JoinTable(name="i")
-//    List<Paciente> pacienteList = new ArrayList<>();
 
 }

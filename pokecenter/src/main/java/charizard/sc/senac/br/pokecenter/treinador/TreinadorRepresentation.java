@@ -10,8 +10,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -29,11 +32,13 @@ public interface TreinadorRepresentation {
         @NotNull(message = "O campo Nome não pode ser nulo")
         @NotEmpty(message = "O campo Nome não pode ser vazio")
         private String nome;
+        @DateTimeFormat
         @NotNull(message = "O campo Data de Nascimento não pode ser nulo")
-//        @NotEmpty(message = "O campo Data de Nascimento não pode ser vazio")
+//        @Min(value = 1900, message = "Ano de nascimento deve ser maior que 1900")
         private Date dataNascimento;
 //        @NotNull(message = "O campo Telefone não pode ser nulo")
 //        @NotEmpty(message = "O campo Telefone não pode ser vazio")
+//        @NumberFormat
         private int telefone;
         @NotNull(message = "O campo Genero não pode ser nulo")
         private Genero genero;
@@ -46,7 +51,7 @@ public interface TreinadorRepresentation {
         private Date dataNascimento;
         private int telefone;
         private Genero genero;
-        private List<PacienteRepresentation.Padrao> paciente;
+//        private List<PacienteRepresentation.Padrao> paciente;
         public static Detalhes from(Treinador treinador) {
             return Detalhes.builder()
                     .id(treinador.getId())
@@ -54,12 +59,13 @@ public interface TreinadorRepresentation {
                     .dataNascimento(treinador.getDataNascimento())
                     .telefone(treinador.getTelefone())
                     .genero(treinador.getGenero())
-                    .paciente(PacienteRepresentation.Padrao.from(treinador.getPacienteList()))
+//                    .paciente(PacienteRepresentation.Padrao.from(treinador.getPacienteList()))
                     .build();
         }
     }
     @Data
     @Builder
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     class Lista {
         private Long id;
         private String nome;

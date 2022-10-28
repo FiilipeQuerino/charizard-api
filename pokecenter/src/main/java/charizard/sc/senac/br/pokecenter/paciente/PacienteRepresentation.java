@@ -24,8 +24,8 @@ public interface PacienteRepresentation {
         private Date dataNascimento;
         private String alergia;
         private Genero genero;
+//        private Pokemon pokemon;
 //        private TreinadorPaciente treinador;
-//        private PokemonPaciente pokemon;
         public static Padrao from(Paciente paciente) {
             return Padrao.builder()
                     .id(paciente.getId())
@@ -34,8 +34,8 @@ public interface PacienteRepresentation {
                     .dataNascimento(paciente.getDataNascimento())
                     .alergia(paciente.getAlergia())
                     .genero(paciente.getGenero())
+//                    .pokemon(paciente.getPokemon())
 //                    .treinador(TreinadorPaciente.from(paciente.getTreinador()))
-//                    .pokemon(PokemonPaciente.from(paciente.getPokemon()))
                     .build();
         }
         public static List<Padrao> from(List<Paciente> pacienteList) {
@@ -44,34 +44,20 @@ public interface PacienteRepresentation {
                     .collect(Collectors.toList());
         }
     }
-//    @Builder
-//    @Data
-//    @AllArgsConstructor
-//    @NoArgsConstructor
-//    class TreinadorPaciente{
-//        private Long id;
-//        private String nome;
-//        public static TreinadorPaciente from(Treinador treinador){
-//            return TreinadorPaciente.builder()
-//                    .id(treinador.getId())
-//                    .nome(treinador.getNome())
-//                    .build();
-//        }
-//    }
-//    @Builder
-//    @Data
-//    @AllArgsConstructor
-//    @NoArgsConstructor
-//    class PokemonPaciente{
-//        private Long id;
-//        private String nome;
-//        public static PokemonPaciente from(Pokemon pokemon){
-//            return PokemonPaciente.builder()
-//                    .id(pokemon.getId())
-//                    .nome(pokemon.getNome())
-//                    .build();
-//        }
-//    }
+    @Builder
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    class TreinadorPaciente{
+        private Long id;
+        private String nome;
+        public static TreinadorPaciente from(Treinador treinador){
+            return TreinadorPaciente.builder()
+                    .id(treinador.getId())
+                    .nome(treinador.getNome())
+                    .build();
+        }
+    }
     @Builder
     @Data
     @AllArgsConstructor
@@ -80,13 +66,14 @@ public interface PacienteRepresentation {
 
         //        @NotNull(message = "O campo Nome não pode ser nulo")
 //        @NotEmpty(message = "O campo Nome não pode ser vazio")
-//        private Treinador treinador;
-        private Pokemon pokemon;
+
         private String nome;
         private TipoSanguineo tipoSanguineo;
         private Date dataNascimento;
         private String alergia;
         private Genero genero;
+//        private Treinador treinador;
+//        private Pokemon pokemon;
 
     }
 

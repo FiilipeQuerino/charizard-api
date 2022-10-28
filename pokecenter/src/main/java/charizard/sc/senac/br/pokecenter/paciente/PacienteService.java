@@ -17,24 +17,19 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-@Slf4j //biblioteca de log (ele indica que pode ser utilizado Log´s, igual o do console)
+@Slf4j
 public class PacienteService {
 
     private PacienteRepository pacienteRepository;
 
     public Paciente criarPaciente(TreinadorService treinadorService,
                                   Long idTreinador,
-                                  PokemonService pokemonService,
-                                  Long idPokemon,
                                   PacienteRepresentation.CriarOuAtualizar criar) {
 
         Treinador treinador = treinadorService.buscarUmTreinador(idTreinador);
 
-        Pokemon pokemon = pokemonService.buscarUmPokemon(idPokemon);
-
         return this.pacienteRepository.save(Paciente.builder()
                 .treinador(treinador)
-                .pokemon(pokemon)
                 .nome(criar.getNome())
                 .tipoSanguineo(criar.getTipoSanguineo())
                 .dataNascimento(criar.getDataNascimento())
@@ -50,20 +45,18 @@ public class PacienteService {
         return this.pacienteRepository.findAll(filtroURI, pageable);
     }
 
-    public Paciente atualizar(//Long idTreinador,
-//                              Long idPokemon,
-                              Long idPaciente, PacienteRepresentation.CriarOuAtualizar atualizar) {
+    public Paciente atualizar(Long idPaciente, PacienteRepresentation.CriarOuAtualizar atualizar) {
 
 
         Paciente pacienteParaAtualizar = Paciente.builder()
-               // .treinador(idTreinador)
-                //.pokemon(idPokemon)
                 .id(idPaciente)
                 .nome(atualizar.getNome())
                 .tipoSanguineo(atualizar.getTipoSanguineo())
                 .dataNascimento(atualizar.getDataNascimento())
                 .alergia(atualizar.getAlergia())
                 .genero(atualizar.getGenero())
+//                .treinador(atualizar.getTreinador())
+//                .pokemon(atualizar.getPokemon())
                 .build();
         return this.pacienteRepository.save(pacienteParaAtualizar);
     }

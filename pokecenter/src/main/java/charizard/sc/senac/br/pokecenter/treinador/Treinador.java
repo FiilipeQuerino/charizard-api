@@ -35,6 +35,6 @@ public class Treinador {
     @Enumerated(EnumType.STRING)
     private Genero genero;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "treinador", orphanRemoval = true)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "treinador", orphanRemoval = false)
     List<Paciente> pacienteList = new ArrayList<>();
 }
