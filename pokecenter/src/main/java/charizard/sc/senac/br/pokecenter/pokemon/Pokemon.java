@@ -23,6 +23,7 @@ import java.util.List;
 public class Pokemon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pokemon")
     private Long id;
 
     @Column(name="nome")

@@ -24,9 +24,12 @@ public class PacienteService {
 
     public Paciente criarPaciente(TreinadorService treinadorService,
                                   Long idTreinador,
+                                  PokemonService pokemonService,
                                   PacienteRepresentation.CriarOuAtualizar criar) {
 
         Treinador treinador = treinadorService.buscarUmTreinador(idTreinador);
+
+        Pokemon pokemon = pokemonService.buscarUmPokemon(criar.getPokemon());
 
         return this.pacienteRepository.save(Paciente.builder()
                 .treinador(treinador)
@@ -35,6 +38,7 @@ public class PacienteService {
                 .dataNascimento(criar.getDataNascimento())
                 .alergia(criar.getAlergia())
                 .genero(criar.getGenero())
+                .pokemon(pokemon)
                 .build());
     }
     public Page<Paciente> buscarTodos(Pageable pageable) {

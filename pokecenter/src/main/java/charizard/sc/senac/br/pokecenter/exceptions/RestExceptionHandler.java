@@ -17,12 +17,24 @@ public class RestExceptionHandler {//vai receber os exceptions para serem mapead
     @ExceptionHandler(TreinadorServiceException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
-    public RespostaErro erroProfessorSerivce(TreinadorServiceException professorServiceException, HttpServletRequest request){
+    public RespostaErro erroTreinamentoSerivce(TreinadorServiceException treinadorServiceException, HttpServletRequest request){
         return RespostaErro.builder()
                 .timestamp(LocalDateTime.now())
                 .status(HttpStatus.UNPROCESSABLE_ENTITY.value())
                 .error(HttpStatus.UNPROCESSABLE_ENTITY.getReasonPhrase())
-                .message(professorServiceException.getMessage())
+                .message(treinadorServiceException.getMessage())
+                .path(request.getContextPath()+request.getServletPath())
+                .build();
+    }
+    @ExceptionHandler(AtendimentoServiceException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public RespostaErro erroAtendimentoSerivce(AtendimentoServiceException atendimentoServiceException, HttpServletRequest request){
+        return RespostaErro.builder()
+                .timestamp(LocalDateTime.now())
+                .status(HttpStatus.UNPROCESSABLE_ENTITY.value())
+                .error(HttpStatus.UNPROCESSABLE_ENTITY.getReasonPhrase())
+                .message(atendimentoServiceException.getMessage())
                 .path(request.getContextPath()+request.getServletPath())
                 .build();
     }

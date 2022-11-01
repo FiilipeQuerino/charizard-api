@@ -1,10 +1,15 @@
 package charizard.sc.senac.br.pokecenter.paciente;
 
+import charizard.sc.senac.br.pokecenter.atendimento.Atendimento;
+import charizard.sc.senac.br.pokecenter.atendimento.AtendimentoRepresentation;
 import charizard.sc.senac.br.pokecenter.pokemon.Pokemon;
+import charizard.sc.senac.br.pokecenter.pokemon.PokemonRepresentation;
 import charizard.sc.senac.br.pokecenter.treinador.Treinador;
 import charizard.sc.senac.br.pokecenter.treinador.TreinadorRepresentation;
 import charizard.sc.senac.br.pokecenter.utils.Genero;
+import charizard.sc.senac.br.pokecenter.utils.Situacao;
 import charizard.sc.senac.br.pokecenter.utils.TipoSanguineo;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,8 +29,7 @@ public interface PacienteRepresentation {
         private Date dataNascimento;
         private String alergia;
         private Genero genero;
-//        private Pokemon pokemon;
-//        private TreinadorPaciente treinador;
+//        private Long pokemon;
         public static Padrao from(Paciente paciente) {
             return Padrao.builder()
                     .id(paciente.getId())
@@ -35,29 +39,12 @@ public interface PacienteRepresentation {
                     .alergia(paciente.getAlergia())
                     .genero(paciente.getGenero())
 //                    .pokemon(paciente.getPokemon())
-//                    .treinador(TreinadorPaciente.from(paciente.getTreinador()))
                     .build();
         }
-        public static List<Padrao> from(List<Paciente> pacienteList) {
-            return pacienteList.stream()
-                    .map(Padrao::from)
-                    .collect(Collectors.toList());
-        }
+
     }
-    @Builder
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    class TreinadorPaciente{
-        private Long id;
-        private String nome;
-        public static TreinadorPaciente from(Treinador treinador){
-            return TreinadorPaciente.builder()
-                    .id(treinador.getId())
-                    .nome(treinador.getNome())
-                    .build();
-        }
-    }
+
+
     @Builder
     @Data
     @AllArgsConstructor
@@ -72,9 +59,39 @@ public interface PacienteRepresentation {
         private Date dataNascimento;
         private String alergia;
         private Genero genero;
-//        private Treinador treinador;
-//        private Pokemon pokemon;
+        private Long pokemon;
 
     }
+    @Data
+    @Builder
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    class Lista {
+        private Long id;
+        private String nome;
+        private TipoSanguineo tipoSanguineo;
+        private Date dataNascimento;
+        private String alergia;
+        private Genero genero;
+        private PokemonRepresentation.Detalhes pokemon;
+        private static Lista from(Paciente paciente) {
+            return Lista.builder()
+                    .id(paciente.getId())
+                    .nome(paciente.getNome())
+                    .tipoSanguineo(paciente.getTipoSanguineo())
+                    .dataNascimento(paciente.getDataNascimento())
+                    .alergia(paciente.getAlergia())
+                    .genero(paciente.getGenero())
+                    .pokemon(PokemonRepresentation.Detalhes.from(paciente.getPokemon()))
+                    .build();
+        }
+
+        public static List<PacienteRepresentation.Lista> from(List<Paciente> pacienteList) {
+            return pacienteList
+                    .stream()
+                    .map(PacienteRepresentation.Lista::from)
+                    .collect(Collectors.toList());
+        }
+    }
+
 
 }
