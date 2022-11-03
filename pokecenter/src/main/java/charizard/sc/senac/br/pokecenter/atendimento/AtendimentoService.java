@@ -73,7 +73,7 @@ public class AtendimentoService {
     }
     private Optional<Atendimento> verificaAtendimentoAtivo(Long idPaciente){
         BooleanExpression filter = QAtendimento.atendimento.situacao.eq(Situacao.A)
-                              .and(QAtendimento.atendimento.paciente.id.eq(idPaciente));
+                .and(QAtendimento.atendimento.paciente.id.eq(idPaciente));
 
         return this.atendimentoRepository.findOne(filter);
     }

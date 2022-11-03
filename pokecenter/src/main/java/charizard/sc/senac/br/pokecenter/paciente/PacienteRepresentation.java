@@ -29,7 +29,7 @@ public interface PacienteRepresentation {
         private Date dataNascimento;
         private String alergia;
         private Genero genero;
-//        private Long pokemon;
+        private PokemonRepresentation.Detalhes pokemon;
         public static Padrao from(Paciente paciente) {
             return Padrao.builder()
                     .id(paciente.getId())
@@ -38,7 +38,7 @@ public interface PacienteRepresentation {
                     .dataNascimento(paciente.getDataNascimento())
                     .alergia(paciente.getAlergia())
                     .genero(paciente.getGenero())
-//                    .pokemon(paciente.getPokemon())
+                    .pokemon(PokemonRepresentation.Detalhes.from(paciente.getPokemon()))
                     .build();
         }
 
