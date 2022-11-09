@@ -1,0 +1,497 @@
+
+CREATE TABLE Pokemon (
+    i_pokemon int,
+    nome varchar,
+    tipo_pokemon varchar
+
+)
+
+INSERTS POKEMON
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(1, 'Buldasaur', 'Grama/Venenoso');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(2, 'Ivsaur', 'Grama/Venenoso');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(3, 'Venusaur', 'Grama/Venenoso');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(4, 'Charmander', 'Fogo');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(5, 'Charmeleon', 'Fogo');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(6, 'Charizard', 'Fogo/Voador');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(7, 'Squirtle', 'Água');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(8, 'Wartortle', 'Água');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(9, 'Blastoise', 'Água');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(10, 'Caterpie', 'Inseto');
+
+INSERT INTO public.Pokemon
+(i_pokemon, nome, tipo_pokemon)
+VALUES(11, 'Metapod', 'Inseto');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (11,'Metapod','Inseto');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (12,'Butterfree','Inseto/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (13,'Weedle','Inseto/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (14,'Kakuna','Inseto/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (15,'Beedrill','Inseto/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (16,'Pidgey','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (17,'Pidgeotto','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (18,'Piodgeot','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (19,'Rattata','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (20,'Raticate','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (21,'Spearow','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (22,'Fearow','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (23,'Ekans','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (24,'Arbok','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (25,'Pikachu','Elétrico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (26,'Raichu','Elétrico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (27,'Sandshrew','Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (28,'Sandslash','Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (29,'Nidoran fêmea','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (30,'Nidorina','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (31,'Nidoqueen','Venenoso/Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (32,'Nidoran macho','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (33,'Nidorino','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (34,'Nidoking','Venenoso/Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (35,'Clefairy','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (36,'Clefable','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (37,'Vulpix','Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (38,'Ninetales','Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (39,'Jigglypuff','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (40,'Wigglypuff','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (41,'Zubat','Venenoso/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (42,'Golbat','Venenoso/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (43,'Oddish','Grama/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (44,'Gloom','Grama/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (45,'Vileplune','Grama/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (46,'Paras','Inseto/Grama');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (47,'Parasect','Inseto/Grama');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (48,'Venonat','Inseto/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (49,'Venomoth','Inseto/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (50,'Diglett','Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (51,'Dugtrio','Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (52,'Meowth','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (53,'Persian','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (54,'Psyduck','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (55,'Golduck','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (56,'Mankey','Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (57,'Primeape','Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (58,'Growlithe','Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (59,'Arcanine',Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (60,'Poliwag','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (61,'Poliwhrill','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (62,'Poliwrath','Água/Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (63,'Abra','Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (64,'Kadabra','Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (65,'Alakazam','Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (66,'Machop','Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (67,'Machoke','Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (68,'Machamp','Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (69,'Bellsprout','Planta/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (70,'Weepinbell','Planta/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (71,'Victreebel','Planta/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values(72,'Tentacool','Água/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (73,'Tentacruel','Água/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (74,'Geodute','Pedra/Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (75,'Graveler','Pedra/Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (76,'Golem','Pedra/Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (77,'Ponyta','Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (78,'Rapidash','Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (79,'Slowpoke','Água/Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (80,'Slowbro','Água/Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (81,'Magnemite','Elétrico/Metálico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (82,'Magneton','Elétrico/Metálico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (83,'Farfetch'd','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (84,'Doduo','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (85,'Dodrio','Normal/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (86,'Seel','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (87,'Dewgong','Água/Gelo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (88,'Grimer','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (89,'Muk','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (90,'Shellder','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (91,'Cloyster','Água/Gelo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (92,'Gastly','Fantasma/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (93,'Haunter','Fantasma/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (94,'Gengar','Fantasma/Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (95,'Onix','Pedra/Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (96,'Drowzee','Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (97,'Hypno','Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (98,'Krabby','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (99,'Kingler','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (100,'Voltorb','Elétrico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (101,'Electrode','Elétrico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (102,'Exeggcute','Planta/Psíquico');
+
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (103,'Exeggutor','Planta/Psíquico');
+
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (104,'Cubone','Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (105,'Marowak','Terrestre');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (106,'Hitmonlee','Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (107,'Hitmonchan','Lutador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (108,'Lickitung','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (109,'Koffing','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (110,'Weezing','Venenoso');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (111,'Rhyhorn','Terrestre/Rocha');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (112,'Rhydon','Terrestre/Rocha');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (113,'Chansey','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (114,'Tangela','Planta');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (115,'Kangaskhan','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (116,'Horsea','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (117,'Seadra','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (118,'Goldeen','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (119,'Seaking','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (120,'Staryuu','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (121,'Starmie','Água/Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (122,'Mr.Mime','Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (123,'Scyther','Inseto/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (124,'Jynx','Gelo/Psíquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (125,'Electabuzz','Elétrico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (126,'Magmar','Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (127,'Pinsir','Inseto');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (128,'Tauros','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (129,'Magikarp','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (130,'Gyarados','Água/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (131,'Lapras','Água/Gelo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (132,'Ditto','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (133,'Eevee','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (134,'Vaporeon','Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (135,'Joelton','Elétrico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (136,'Flareon','Fogo');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (137,'Porygon','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (138,'Omanyte','Pedra/Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (139,'Omastar','Pedra/Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (140,'Kabuto','Pedra/Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (141,'Kabutops','Pedra/Água');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (142,'Aerodarctyl','Pedra/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (143,'Snorlax','Normal');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (144,'Articuno','Gelo/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (145,'Zapdos','Elétrico/Voador');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (146,'Moltres','Fogo/Voador');
+
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (147,'Dratini','Dragão');
+
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (148,'Dragonair','Dragão');
+
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (149,'Dragonite','Dragão/Voador');
+
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (150,'Mewtwo','Psiquico');
+
+insert into public.Pokemon(i_pokemon,nome,tipo_pokemon)
+values (151,'Mew','Psíquico');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
