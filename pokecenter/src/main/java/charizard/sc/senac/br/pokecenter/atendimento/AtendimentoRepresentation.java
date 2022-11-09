@@ -64,20 +64,12 @@ public interface AtendimentoRepresentation {
         private Situacao situacao;
         private PacienteRepresentation.Padrao paciente;
         private static AtendimentoRepresentation.Lista from(Atendimento atendimento) {
-            return atendimento.getPacienteList().isEmpty() ?
-                    AtendimentoRepresentation.Lista.builder()
+            return AtendimentoRepresentation.Lista.builder()
                             .id(atendimento.getId())
                             .dataInicio(atendimento.getDataInicio())
                             .dataFim(atendimento.getDataFim())
                             .situacao(atendimento.getSituacao())
-                            .build():
-                    AtendimentoRepresentation.Lista.builder()
-                            .id(atendimento.getId())
-                            .dataInicio(atendimento.getDataInicio())
-                            .dataFim(atendimento.getDataFim())
-                            .situacao(atendimento.getSituacao())
-                            .paciente(PacienteRepresentation.Padrao
-                                    .from(atendimento.getPacienteList().get(0)))
+                            .paciente(PacienteRepresentation.Padrao.from(atendimento.getPaciente()))
                             .build();
         }
 

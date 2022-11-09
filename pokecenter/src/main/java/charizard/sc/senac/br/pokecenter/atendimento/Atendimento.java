@@ -33,8 +33,9 @@ public class Atendimento {
     @Column(name = "situacao")
     @Enumerated(EnumType.STRING)
     private Situacao situacao;
+    @ManyToOne
+    private Paciente paciente;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "atendimento", orphanRemoval = false)
-    List<Paciente> pacienteList = new ArrayList<>();
+
 
 }

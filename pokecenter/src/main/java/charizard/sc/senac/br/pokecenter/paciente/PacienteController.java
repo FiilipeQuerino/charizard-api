@@ -4,6 +4,9 @@ package charizard.sc.senac.br.pokecenter.paciente;
 
 
 
+import charizard.sc.senac.br.pokecenter.atendimento.Atendimento;
+import charizard.sc.senac.br.pokecenter.atendimento.AtendimentoRepresentation;
+import charizard.sc.senac.br.pokecenter.pokemon.PokemonService;
 import charizard.sc.senac.br.pokecenter.treinador.TreinadorService;
 import com.querydsl.core.types.Predicate;
 import lombok.AllArgsConstructor;
@@ -24,6 +27,7 @@ import java.util.Objects;
 @CrossOrigin("*")
 @AllArgsConstructor
 public class PacienteController {
+    private PokemonService pokemonService;
     private TreinadorService treinadorService;
     private PacienteService pacienteService;
 
@@ -34,12 +38,12 @@ public class PacienteController {
 
         Paciente paciente =
                 this.pacienteService.criarPaciente(treinadorService,
-                        idTreinador, criar);
+                        idTreinador, pokemonService, criar);
         return ResponseEntity.status(HttpStatus.SC_CREATED)
                 .body(PacienteRepresentation.Padrao.from(paciente));
     }
     @GetMapping("/")
-    public ResponseEntity<List<PacienteRepresentation.Padrao>> buscarPaciente(
+    public ResponseEntity<List<PacienteRepresentation.Lista>> buscarPaciente(
             @QuerydslPredicate(root = Paciente.class) Predicate filtroURI,
             @RequestParam(name="tamanhoPagina", defaultValue = "30") int tamanhoPagina,
             @RequestParam(name="paginaSelecionada", defaultValue = "0") int paginaSelecionada) {
@@ -50,9 +54,10 @@ public class PacienteController {
                 this.pacienteService.buscarTodos(pageable):
                 this.pacienteService.buscarTodos(filtroURI, pageable);
 
-        List<PacienteRepresentation.Padrao> listaFinal = PacienteRepresentation.Padrao.from(pacienteList.getContent());
+        List<PacienteRepresentation.Lista> listaFinal = PacienteRepresentation.Lista.from(pacienteList.getContent());
         return ResponseEntity.ok(listaFinal);
     }
+
     @GetMapping("/{idPaciente}")
     public ResponseEntity<PacienteRepresentation.Padrao> buscarUmPaciente(
             @PathVariable Long idPaciente) {

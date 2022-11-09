@@ -28,14 +28,6 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Atendimento atendimento;
-    @ManyToOne
-    private Treinador treinador;
-
-//    @ManyToOne
-//    private Pokemon pokemon;
-
     @Column(name="nome")
     @NotNull(message="O nome não pode ser nulo")
     @NotEmpty(message="O nome não pode ser vazio")
@@ -55,6 +47,14 @@ public class Paciente {
     @Enumerated(EnumType.STRING)
     private Genero genero;
 
-//    @Column(name = "pokemon")
-//    private Pokemon pokemon;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_pokemon")
+    private Pokemon pokemon;
+
+    @ManyToOne
+    private Treinador treinador;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "paciente", orphanRemoval = false)
+    List<Atendimento> atendimentoList = new ArrayList<>();
+
 }
